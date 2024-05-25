@@ -146,7 +146,7 @@ public class SwingUI extends JFrame {
     public void check(int[][] matrix, JButton[] buttons ) {
         if (count % 2 == 0) {
             if (checkWinner(matrix, 0) == true) {
-                JOptionPane.showMessageDialog(SwingUI.this, "Перемога Ноліков", "Перемога", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(SwingUI.this, "Перемога Ноліков", "Перемога", JOptionPane.INFORMATION_MESSAGE);
                 restart_game(buttons,matrix);
             }
         } else{
