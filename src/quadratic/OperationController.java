@@ -3,18 +3,18 @@ package quadratic;
 import static java.lang.Math.sqrt;
 
 public class OperationController {
-    private double x1, x2, x3;
+    private double a, b, c;
     private double res_x1, res_x2;
-    private boolean d_minus = false;
+    private double discriminant;
 
-    public boolean isD_minus() {
-        return d_minus;
+    public double getDiscriminant() {
+        return discriminant;
     }
 
-    public OperationController(double x1, double x2, double x3) {
-        this.x1 = x1;
-        this.x2 = x2;
-        this.x3 = x3;
+    public OperationController(double a, double b, double c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     public double getRes_x1() {
@@ -26,22 +26,22 @@ public class OperationController {
     }
 
     public void resultat() {
-        double D = Math.pow(x2, 2) - (4 * x1 * x3);
-        if (D > 0) {
-            res_x1 = (-1 * (x2) + sqrt(D)) / (x1 * 2);
-            res_x2 = (-1 * (x2) - sqrt(D)) / (x1 * 2);
+        discriminant = Math.pow(b, 2) - (4 * a * c);
+        if (discriminant > 0) {
+            res_x1 = (-1 * (b) + sqrt(discriminant)) / (a * 2);
+            res_x2 = (-1 * (b) - sqrt(discriminant)) / (a * 2);
             res_x1 = Math.round(res_x1 * 100.0) / 100.0;
             res_x2 = Math.round(res_x2 * 100.0) / 100.0;
-        } else if (D == 0) {
-            res_x1 = (-1 * (x2)) / (x1 * 2);
+        } else if (discriminant == 0) {
+            res_x1 = (-1 * (b)) / (a * 2);
             res_x1 = Math.round(res_x1 * 100.0) / 100.0;
         } else {
-            D = -D;
-            res_x1 = (-1 * (x2) + sqrt(D)) / (x1 * 2);
-            res_x2 = (-1 * (x2) - sqrt(D)) / (x1 * 2);
+            double complex_disc = -discriminant;
+            res_x1 = (-1 * (b) + sqrt(complex_disc)) / (a * 2);
+            res_x2 = (-1 * (b) - sqrt(complex_disc)) / (a * 2);
             res_x1 = Math.round(res_x1 * 100.0) / 100.0;
             res_x2 = Math.round(res_x2 * 100.0) / 100.0;
-            d_minus = true;
+
         }
     }
 }

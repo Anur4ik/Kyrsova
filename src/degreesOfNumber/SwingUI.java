@@ -74,6 +74,7 @@ public class SwingUI extends JFrame {
                 t_firstNumber.setEditable(false);
                 t_qNumber.setEditable(false);
                 t_kNumber.setEditable(false);
+                button1.setEnabled(false);
                 try {
                     int b = Integer.parseInt(t_firstNumber.getText());
                     int q = Integer.parseInt(t_qNumber.getText());
@@ -82,7 +83,7 @@ public class SwingUI extends JFrame {
                     textArea.setText(String.valueOf(setting.result(textArea)));
                 }
                 catch (NumberFormatException ex){
-                    JOptionPane.showMessageDialog(degreesOfNumber.SwingUI.this, "Введіть дані", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(SwingUI.this, "Введіть дані", "Error", JOptionPane.ERROR_MESSAGE);
 
                 }
             }
@@ -97,6 +98,7 @@ public class SwingUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 t_firstNumber.setEditable(true);
                 t_qNumber.setEditable(true);
+                button1.setEnabled(true);
                 t_kNumber.setEditable(true);
                 t_firstNumber.setText("");
                 t_qNumber.setText("");
